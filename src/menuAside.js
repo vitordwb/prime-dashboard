@@ -9,8 +9,8 @@ import {
   mdiViewList,
   mdiTelevisionGuide,
   mdiPalette,
-  mdiReact,
-  mdiChartBar
+  mdiChartBar,
+  mdiQrcode
 } from '@mdi/js'
 
 export default [
@@ -78,9 +78,8 @@ export default [
     target: '_blank'
   },
   {
-    href: 'https://github.com/justboil/admin-one-react-tailwind',
-    label: 'React version',
-    icon: mdiReact,
-    target: '_blank'
+    to:'/qrcode',
+    label: 'QR Code',
+    icon: mdiQrcode,
   }
 ]

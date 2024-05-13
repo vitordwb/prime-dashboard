@@ -20,16 +20,16 @@ const routes = [
     name: 'dashboard',
     component: Home
   },
-  // {
-  //   // Document title tag
-  //   // We combine it with defaultDocumentTitle set in `src/main.js` on router.afterEach hook
-  //   meta: {
-  //     title: 'Dashboard'
-  //   },
-  //   path: '/dashboard',
-  //   name: 'dashboard',
-  //   component: Home
-  // },
+  {
+    // Document title tag
+    // We combine it with defaultDocumentTitle set in `src/main.js` on router.afterEach hook
+    meta: {
+      title: 'Dashboard'
+    },
+    path: '/dashboard',
+    name: 'dashboard',
+    component: Home
+  },
   {
     meta: {
       title: 'Tab'
@@ -45,6 +45,14 @@ const routes = [
     path: '/forms',
     name: 'forms',
     component: () => import('@/views/FormsView.vue')
+  },
+  {
+    meta: {
+      title: 'Qr Code'
+    },
+    path: '/qrcode',
+    name: 'qrcode',
+    component: () => import('@/views/QrcodeView.vue')
   },
   {
     meta: {
