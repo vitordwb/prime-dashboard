@@ -74,9 +74,9 @@ const menuClick = (event, item) => {
       />
       <slot />
       <FooterBar>
-        Get more with
-        <a href="https://tailwind-vue.justboil.me/" target="_blank" class="text-blue-600"
-          >Premium version</a
+        Acesso o código completo no
+        <a href="https://github.com/vitordwb/prime-dashboard" target="_blank" class="text-blue-600"
+          >Github</a
         >
       </FooterBar>
     </div>

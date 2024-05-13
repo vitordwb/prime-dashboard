@@ -6,7 +6,7 @@ import {
   mdiAlertCircle,
   mdiSquareEditOutline,
   mdiTable,
-  mdiViewList,
+  // mdiViewList,
   mdiTelevisionGuide,
   mdiPalette,
   mdiChartBar,
@@ -60,26 +60,26 @@ export default [
     icon: mdiAlertCircle
   },
   {
-    label: 'Dropdown',
-    icon: mdiViewList,
-    menu: [
-      {
-        label: 'Item One'
-      },
-      {
-        label: 'Item Two'
-      }
-    ]
-  },
-  {
-    href: 'https://github.com/justboil/admin-one-vue-tailwind',
-    label: 'GitHub',
-    icon: mdiGithub,
-    target: '_blank'
-  },
-  {
     to:'/qrcode',
     label: 'QR Code',
     icon: mdiQrcode,
+  },
+  {
+    href: 'https://github.com/vitordwb/prime-dashboard',
+    label: 'GitHub',
+    icon: mdiGithub,
+    target: '_blank'
   }
+  // {
+  //   label: 'Dropdown',
+  //   icon: mdiViewList,
+  //   menu: [
+  //     {
+  //       label: 'Item One'
+  //     },
+  //     {
+  //       label: 'Item Two'
+  //     }
+  //   ]
+  // },
 ]
