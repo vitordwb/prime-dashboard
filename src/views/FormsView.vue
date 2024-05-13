@@ -22,8 +22,8 @@ const selectOptions = [
 ]
 
 const form = reactive({
-  name: 'John Doe',
-  email: 'john.doe@example.com',
+  name: 'Vitor Watanabe',
+  email: 'vitor@fei.com',
   phone: '',
   department: selectOptions[0],
   subject: '',
@@ -62,7 +62,7 @@ const formStatusSubmit = () => {
           href="https://github.com/justboil/admin-one-vue-tailwind"
           target="_blank"
           :icon="mdiGithub"
-          label="Star on GitHub"
+          label="Repositório no GitHub"
           color="contrast"
           rounded-full
           small

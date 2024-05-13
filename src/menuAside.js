@@ -8,9 +8,9 @@ import {
   mdiTable,
   mdiViewList,
   mdiTelevisionGuide,
-  mdiResponsive,
   mdiPalette,
-  mdiReact, mdiChartBar
+  mdiReact,
+  mdiChartBar
 } from '@mdi/js'
 
 export default [

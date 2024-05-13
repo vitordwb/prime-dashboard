@@ -1,12 +1,13 @@
 {
-  "name": "admin-one-vue-tailwind",
+  "name": "prime-dashboard",
   "version": "3.3.0",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview --port 4173",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
-    "format": "prettier --write src/"
+    "format": "prettier --write src/",
+    "start": "dev"
   },
   "dependencies": {
     "@mdi/js": "^7.0.96",

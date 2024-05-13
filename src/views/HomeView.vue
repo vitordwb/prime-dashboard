@@ -46,10 +46,10 @@ const transactionBarItems = computed(() => mainStore.history)
     <SectionMain>
       <SectionTitleLineWithButton :icon="mdiChartTimelineVariant" title="Overview" main>
         <BaseButton
-          href="https://github.com/justboil/admin-one-vue-tailwind"
+          href="https://github.com/vitordwb/prime-dashboard"
           target="_blank"
           :icon="mdiGithub"
-          label="Star on GitHub"
+          label="Repositório no GitHub"
           color="contrast"
           rounded-full
           small
