@@ -58,20 +58,20 @@ export default {
 }
 
 .video-container {
-  display: flex;           /* Flexbox to center content */
-  justify-content: center; /* Centraliza horizontalmente */
-  align-items: center;     /* Centraliza verticalmente */
-  width: 80vw;             /* Ocupa 80% da largura da viewport */
-  max-width: 600px;        /* Limita a largura máxima para grandes dispositivos */
-  aspect-ratio: 1;         /* Garante que o container seja quadrado */
-  overflow: hidden;        /* Evita que o vídeo ultrapasse os limites do container */
-  margin: 0 auto;          /* Center the container itself */
+  display: flex;           /* flexbox to center content */
+  justify-content: center; /* centraliza horizontalmente */
+  align-items: center;     /* centraliza verticalmente */
+  width: 80vw;             /* ocupa 80% da largura da viewport */
+  max-width: 600px;        /* limita a largura máxima para grandes dispositivos */
+  aspect-ratio: 1;         /* garante que o container seja quadrado */
+  overflow: hidden;        /* evita que o vídeo ultrapasse os limites do container */
+  margin: 0 auto;          /* center the container itself */
 }
 
 video {
   width: 100%;
   height: 100%;
-  object-fit: cover;       /* Garante que o vídeo preencha o espaço sem distorção */
+  object-fit: cover;       /* garante que o vídeo preencha o espaço sem distorção */
 }
 </style>
 
