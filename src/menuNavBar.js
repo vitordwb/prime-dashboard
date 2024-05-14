@@ -9,60 +9,59 @@ import {
   mdiLogout,
   mdiThemeLightDark,
   mdiGithub,
-  mdiReact
 } from '@mdi/js'
 
 export default [
-  {
-    icon: mdiMenu,
-    label: 'Sample menu',
-    menu: [
-      {
-        icon: mdiClockOutline,
-        label: 'Item One'
-      },
-      {
-        icon: mdiCloud,
-        label: 'Item Two'
-      },
-      {
-        isDivider: true
-      },
-      {
-        icon: mdiCrop,
-        label: 'Item Last'
-      }
-    ]
-  },
+  // {
+  //   icon: mdiMenu,
+  //   label: 'Sample menu',
+  //   menu: [
+  //     {
+  //       icon: mdiClockOutline,
+  //       label: 'Item One'
+  //     },
+  //     {
+  //       icon: mdiCloud,
+  //       label: 'Item Two'
+  //     },
+  //     {
+  //       isDivider: true
+  //     },
+  //     {
+  //       icon: mdiCrop,
+  //       label: 'Item Last'
+  //     }
+  //   ]
+  // },
   {
     isCurrentUser: true,
     menu: [
       {
         icon: mdiAccount,
-        label: 'My Profile',
+        label: 'Meu Perfil',
         to: '/profile'
       },
       {
         icon: mdiCogOutline,
-        label: 'Settings'
+        label: 'Configuração'
       },
       {
         icon: mdiEmail,
-        label: 'Messages'
+        label: 'Mensagens'
       },
       {
         isDivider: true
       },
       {
         icon: mdiLogout,
-        label: 'Log Out',
+        label: 'Sair',
         isLogout: true
       }
     ]
   },
   {
     icon: mdiThemeLightDark,
-    label: 'Light/Dark',
+    label: 'Claro/Escuro',
     isDesktopNoLabel: true,
     isToggleLightDark: true
   },
@@ -70,19 +69,12 @@ export default [
     icon: mdiGithub,
     label: 'GitHub',
     isDesktopNoLabel: true,
-    href: 'https://github.com/justboil/admin-one-vue-tailwind',
-    target: '_blank'
-  },
-  {
-    icon: mdiReact,
-    label: 'React version',
-    isDesktopNoLabel: true,
-    href: 'https://github.com/justboil/admin-one-react-tailwind',
+    href: 'https://github.com/vitordwb/prime-dashboard',
     target: '_blank'
   },
   {
     icon: mdiLogout,
-    label: 'Log out',
+    label: 'Sair',
     isDesktopNoLabel: true,
     isLogout: true
   }
