@@ -72,11 +72,11 @@ const routes = [
   },
   {
     meta: {
-      title: 'Responsive layout'
+      title: 'Charts'
     },
-    path: '/responsive',
-    name: 'responsive',
-    component: () => import('@/views/ResponsiveView.vue')
+    path: '/charts',
+    name: 'charts',
+    component: () => import('@/views/ChartsView.vue')
   },
   {
     meta: {
