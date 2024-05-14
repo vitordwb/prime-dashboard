@@ -25,6 +25,22 @@ export default [
     icon: mdiChartBar
   },
   {
+    label: 'Charts',
+    icon: mdiChartBar,
+    menu: [
+      {
+        to: '/charts',
+        label: 'Charts 1',
+        icon: mdiChartBar
+      },
+      {
+        to: '/charts2',
+        label: 'Charts 2',
+        icon: mdiChartBar
+      },
+    ]
+  },
+  {
     to:'/qrcode',
     label: 'QR Code',
     icon: mdiQrcode,

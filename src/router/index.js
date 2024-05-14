@@ -80,6 +80,14 @@ const routes = [
   },
   {
     meta: {
+      title: 'Charts2'
+    },
+    path: '/charts2',
+    name: 'charts2',
+    component: () => import('@/views/Charts2View.vue')
+  },
+  {
+    meta: {
       title: 'Login'
     },
     path: '/login',
