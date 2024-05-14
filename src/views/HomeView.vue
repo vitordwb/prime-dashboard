@@ -44,7 +44,7 @@ const transactionBarItems = computed(() => mainStore.history)
 <template>
   <LayoutAuthenticated>
     <SectionMain>
-      <SectionTitleLineWithButton :icon="mdiChartTimelineVariant" title="Overview" main>
+      <SectionTitleLineWithButton :icon="mdiChartTimelineVariant" title="Visão Geral" main>
         <BaseButton
           href="https://github.com/vitordwb/prime-dashboard"
           target="_blank"
@@ -63,7 +63,7 @@ const transactionBarItems = computed(() => mainStore.history)
           color="text-emerald-500"
           :icon="mdiAccountMultiple"
           :number="512"
-          label="Clients"
+          label="Clientes"
         />
         <CardBoxWidget
           trend="12%"
@@ -72,7 +72,7 @@ const transactionBarItems = computed(() => mainStore.history)
           :icon="mdiCartOutline"
           :number="7770"
           prefix="$"
-          label="Sales"
+          label="Vendas"
         />
         <CardBoxWidget
           trend="Overflow"
@@ -84,6 +84,16 @@ const transactionBarItems = computed(() => mainStore.history)
           label="Performance"
         />
       </div>
+
+      <SectionTitleLineWithButton :icon="mdiChartPie" title="Equipamentos | Potência">
+        <BaseButton :icon="mdiReload" color="whiteDark" @click="fillChartData" />
+      </SectionTitleLineWithButton>
+
+      <CardBox class="mb-6">
+        <div v-if="chartData">
+          <line-chart :data="chartData" class="h-96" />
+        </div>
+      </CardBox>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
         <div class="flex flex-col justify-between">
@@ -112,25 +122,15 @@ const transactionBarItems = computed(() => mainStore.history)
 
       <SectionBannerStarOnGitHub class="mt-6 mb-6" />
 
-      <SectionTitleLineWithButton :icon="mdiChartPie" title="Trends overview">
-        <BaseButton :icon="mdiReload" color="whiteDark" @click="fillChartData" />
-      </SectionTitleLineWithButton>
+<!--      <SectionTitleLineWithButton :icon="mdiAccountMultiple" title="Clients" />-->
 
-      <CardBox class="mb-6">
-        <div v-if="chartData">
-          <line-chart :data="chartData" class="h-96" />
-        </div>
-      </CardBox>
+<!--      <NotificationBar color="info" :icon="mdiMonitorCellphone">-->
+<!--        <b>Responsive table.</b> Collapses on mobile-->
+<!--      </NotificationBar>-->
 
-      <SectionTitleLineWithButton :icon="mdiAccountMultiple" title="Clients" />
-
-      <NotificationBar color="info" :icon="mdiMonitorCellphone">
-        <b>Responsive table.</b> Collapses on mobile
-      </NotificationBar>
-
-      <CardBox has-table>
-        <TableSampleClients />
-      </CardBox>
+<!--      <CardBox has-table>-->
+<!--        <TableSampleClients />-->
+<!--      </CardBox>-->
     </SectionMain>
   </LayoutAuthenticated>
 </template>
