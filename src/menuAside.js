@@ -1,14 +1,14 @@
 import {
-  mdiAccountCircle,
+  // mdiAccountCircle,
+  // mdiLock,
+  // mdiAlertCircle,
+  // mdiSquareEditOutline,
+  // mdiTable,
+  // mdiViewList,
+  // mdiTelevisionGuide,
+  // mdiPalette,
   mdiMonitor,
   mdiGithub,
-  mdiLock,
-  mdiAlertCircle,
-  mdiSquareEditOutline,
-  mdiTable,
-  // mdiViewList,
-  mdiTelevisionGuide,
-  mdiPalette,
   mdiChartBar,
   mdiQrcode
 } from '@mdi/js'
@@ -20,44 +20,9 @@ export default [
     label: 'Dashboard'
   },
   {
-    to: '/tables',
-    label: 'Tables',
-    icon: mdiTable
-  },
-  {
-    to: '/forms',
-    label: 'Forms',
-    icon: mdiSquareEditOutline
-  },
-  {
-    to: '/ui',
-    label: 'UI',
-    icon: mdiTelevisionGuide
-  },
-  {
-    to: '/responsive',
+    to: '/charts',
     label: 'Charts',
     icon: mdiChartBar
-  },
-  {
-    to: '/',
-    label: 'Styles',
-    icon: mdiPalette
-  },
-  {
-    to: '/profile',
-    label: 'Profile',
-    icon: mdiAccountCircle
-  },
-  {
-    to: '/login',
-    label: 'Login',
-    icon: mdiLock
-  },
-  {
-    to: '/error',
-    label: 'Error',
-    icon: mdiAlertCircle
   },
   {
     to:'/qrcode',
@@ -69,7 +34,42 @@ export default [
     label: 'GitHub',
     icon: mdiGithub,
     target: '_blank'
-  }
+  },
+  // {
+  //   to: '/',
+  //   label: 'Styles',
+  //   icon: mdiPalette
+  // },
+  // {
+  //   to: '/profile',
+  //   label: 'Profile',
+  //   icon: mdiAccountCircle
+  // },
+  // {
+  //   to: '/login',
+  //   label: 'Login',
+  //   icon: mdiLock
+  // },
+  // {
+  //   to: '/tables',
+  //   label: 'Tables',
+  //   icon: mdiTable
+  // },
+  // {
+  //   to: '/forms',
+  //   label: 'Forms',
+  //   icon: mdiSquareEditOutline
+  // },
+  // {
+  //   to: '/ui',
+  //   label: 'UI',
+  //   icon: mdiTelevisionGuide
+  // },
+  // {
+  //   to: '/error',
+  //   label: 'Error',
+  //   icon: mdiAlertCircle
+  // },
   // {
   //   label: 'Dropdown',
   //   icon: mdiViewList,
