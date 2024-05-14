@@ -25,17 +25,17 @@ const userSwitchVal = ref(false)
             v-model="userSwitchVal"
             name="notifications-switch"
             type="switch"
-            label="Notifications"
+            label="Notificações"
             :input-value="true"
           />
         </div>
         <h1 class="text-2xl">
-          Howdy, <b>{{ userName }}</b
+          Olá, <b>{{ userName }}</b
           >!
         </h1>
-        <p>Last login <b>12 mins ago</b> from <b>127.0.0.1</b></p>
+        <p>Ultimo acesso <b>12 minutos atrás</b> de <b>127.0.0.1</b></p>
         <div class="flex justify-center md:block">
-          <PillTag label="Verified" color="info" :icon="mdiCheckDecagram" />
+          <PillTag label="Verificado" color="info" :icon="mdiCheckDecagram" />
         </div>
       </div>
     </BaseLevel>
