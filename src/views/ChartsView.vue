@@ -8,7 +8,6 @@ import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, Li
 
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
-// eslint-disable-next-line vue/no-export-in-script-setup
 export default {
   name: 'BarChart',
   components: { LayoutAuthenticated, SectionMain, SectionTitle, Bar },

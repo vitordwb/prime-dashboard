@@ -25,7 +25,7 @@ export default [
     icon: mdiChartBar
   },
   {
-    label: 'Charts',
+    label: 'Charts (Dropdown)',
     icon: mdiChartBar,
     menu: [
       {
