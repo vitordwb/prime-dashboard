@@ -1,6 +1,8 @@
 <template>
   <LayoutAuthenticated>
-    <section>
+    <SectionMain>
+      <SectionTitleLineWithButton :icon="mdiCamera" title="QR Code" main>
+      </SectionTitleLineWithButton>
       <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
@@ -11,7 +13,8 @@
           </div>
         </div>
       </div>
-    </section>
+      <BaseDivider />
+    </SectionMain>
   </LayoutAuthenticated>
 </template>
 
@@ -73,8 +76,32 @@ video {
   height: 100%;
   object-fit: cover;       /* garante que o vídeo preencha o espaço sem distorção */
 }
+
+/* Media queries para dispositivos móveis */
+@media (max-width: 768px) {
+  .video-container {
+    width: 90vw;           /* Ocupa 90% da largura da viewport em dispositivos móveis */
+    max-width: none;       /* Remove a limitação de largura máxima */
+  }
+}
+
+@media (max-width: 480px) {
+  .video-container {
+    width: 100vw;          /* Ocupa 100% da largura da viewport em dispositivos muito pequenos */
+    aspect-ratio: auto;    /* Ajusta a proporção para evitar distorções */
+  }
+}
 </style>
 
 <script setup lang="ts">
 import LayoutAuthenticated from '@/layouts/LayoutAuthenticated.vue';
+import SectionMain from '@/components/SectionMain.vue'
+// import SectionTitle from '@/components/SectionTitle.vue'
+// import { mdiChartTimelineVariant, mdiGithub, mdiQrcode } from '@mdi/js'
+// import SectionTitleLineWithButton from '@/components/SectionTitleLineWithButton.vue'
+// import BaseButton from '@/components/BaseButton.vue'
+import BaseDivider from '@/components/BaseDivider.vue'
+import { mdiCamera, mdiChartTimelineVariant, mdiGithub } from '@mdi/js'
+import SectionTitleLineWithButton from '@/components/SectionTitleLineWithButton.vue'
+import BaseButton from '@/components/BaseButton.vue'
 </script>
