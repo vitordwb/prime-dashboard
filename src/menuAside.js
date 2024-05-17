@@ -3,7 +3,7 @@ import {
   // mdiLock,
   // mdiAlertCircle,
   // mdiSquareEditOutline,
-  // mdiTable,
+  mdiTable,
   // mdiViewList,
   // mdiTelevisionGuide,
   // mdiPalette,
@@ -25,8 +25,8 @@ export default [
     icon: mdiChartBar
   },
   {
-    label: 'Charts (Dropdown)',
-    icon: mdiChartBar,
+    label: 'Charts',
+    icon: mdiTable,
     menu: [
       {
         to: '/charts',
