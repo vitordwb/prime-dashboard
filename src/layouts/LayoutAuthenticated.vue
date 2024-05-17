@@ -74,7 +74,7 @@ const menuClick = (event, item) => {
       />
       <slot />
       <FooterBar>
-        Acesso o código completo no
+        Acesse o código completo no
         <a href="https://github.com/vitordwb/prime-dashboard" target="_blank" class="text-blue-600"
           >Github</a
         >
