@@ -21,7 +21,7 @@ const database = getDatabase(app);
 
 export const useFirebaseStore = defineStore('firebase', {
   state: () => ({
-    relayData: null,
+    relayData: JSON.parse(localStorage.getItem('relayData')) || null,
     loading: false,
     error: null,
   }),
@@ -30,13 +30,14 @@ export const useFirebaseStore = defineStore('firebase', {
       this.loading = true;
       try {
         const dbRef = ref(database);
-        const snapshot = await get(child(dbRef, 'rele001'));
+        const snapshot = await get(child(dbRef, 'rele003'));
         if (snapshot.exists()) {
           // eslint-disable-next-line no-unused-vars
           this.relayData = Object.entries(snapshot.val()).map(([key, value]) => ({...value}));
+          localStorage.setItem('relayData', JSON.stringify(this.relayData));
         } else {
           alert('Nenhum dado disponível')
-          console.log("No data available");
+          console.log("Firebase: no data available");
           this.relayData = null;
         }
       } catch (error) {
