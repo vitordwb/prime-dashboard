@@ -1,19 +1,19 @@
 <script setup>
 import { computed, ref, onMounted } from 'vue'
-// import { useMainStore } from '@/stores/main'
+import { useMainStore } from '@/stores/main'
 import {
-  // mdiAccountMultiple,
-  // mdiCartOutline,
+  mdiAccountMultiple,
+  mdiCartOutline,
   mdiChartTimelineVariant,
-  // mdiMonitorCellphone,
   mdiReload,
   mdiGithub,
   mdiChartPie,
-  mdiCoolantTemperature
+  mdiCoolantTemperature,
+  mdiDatabase
 } from '@mdi/js'
 import * as chartConfig from '@/components/Charts/chart.config.js'
 import LineChart from '@/components/Charts/LineChart.vue'
-import BarChart from '@/components/Charts/LineChart.vue'
+import BarChart from '@/components/Charts/BarChart.vue'
 import SectionMain from '@/components/SectionMain.vue'
 import CardBoxWidget from '@/components/CardBoxWidget.vue'
 import CardBox from '@/components/CardBox.vue'
@@ -22,38 +22,20 @@ import LayoutAuthenticated from '@/layouts/LayoutAuthenticated.vue'
 import SectionTitleLineWithButton from '@/components/SectionTitleLineWithButton.vue'
 import SectionBannerStarOnGitHub from '@/components/SectionBannerStarOnGitHub.vue'
 import { useFirebaseStore } from '@/stores/firebaseStore'
-// import CardBoxTransaction from '@/components/CardBoxTransaction.vue'
-// import CardBoxClient from '@/components/CardBoxClient.vue'
-// import TableSampleClients from '@/components/TableSampleClients.vue'
-// import NotificationBar from '@/components/NotificationBar.vue'
+import CardBoxTransaction from '@/components/CardBoxTransaction.vue'
+import CardBoxClient from '@/components/CardBoxClient.vue'
+import TableSampleClients from '@/components/TableSampleClients.vue'
+import NotificationBar from '@/components/NotificationBar.vue'
 
 const chartData = ref(null)
 const firebaseStore = useFirebaseStore();
 const relayData = computed(() => firebaseStore.relayData);
+// const loading = computed(() => firebaseStore.loading);
+// const error = computed(() => firebaseStore.error);
 
 const fillChartData = () => {
   chartData.value = chartConfig.sampleChartData()
 }
-
-const getTemperature = (data, mode) => {
-  return data.map((value) => {
-    const current_info = value[mode]
-    if(!(current_info[0])){
-      return 0;
-    } else {
-      return current_info[1]
-    }
-  })
-}
-
-console.log('aqui')
-console.log(getTemperature(relayData.value, 'temperatura_interna'));
-
-// console.log(relayData.value[relayData.value.length-1].cycle)
-
-// const getCycle = () => {
-//   return relayData.value
-// }
 
 onMounted(() => {
   if (!relayData.value) {
@@ -62,18 +44,20 @@ onMounted(() => {
   fillChartData();
 })
 
+const getLastCycle = () => relayData.value[relayData.value.length - 1].cycle
 
-
-// const mainStore = useMainStore()
-//
-// const clientBarItems = computed(() => mainStore.clients.slice(0, 4))
-//
-// const transactionBarItems = computed(() => mainStore.history)
+const mainStore = useMainStore()
+const clientBarItems = computed(() => mainStore.clients.slice(0, 4))
+const transactionBarItems = computed(() => mainStore.history)
 </script>
 
 <template>
   <LayoutAuthenticated>
     <SectionMain>
+
+<!--      consomo medio kWh -->
+<!--      temperatura interna-->
+
       <SectionTitleLineWithButton :icon="mdiChartTimelineVariant" title="Visão Geral" main>
         <BaseButton
           href="https://github.com/vitordwb/prime-dashboard"
@@ -92,7 +76,7 @@ onMounted(() => {
           trend-type="up"
           color="text-emerald-500"
           :icon="mdiReload"
-          :number="123"
+          :number="getLastCycle()"
           label="Ciclos"
         />
         <CardBoxWidget
@@ -160,17 +144,14 @@ onMounted(() => {
 <!--        </div>-->
 <!--      </div>-->
 
-      <SectionBannerStarOnGitHub class="mt-6 mb-6" />
+<!--      <SectionBannerStarOnGitHub class="mt-6 mb-6" />-->
 
 <!--      <SectionTitleLineWithButton :icon="mdiAccountMultiple" title="Clients" />-->
-
-<!--      <NotificationBar color="info" :icon="mdiMonitorCellphone">-->
-<!--        <b>Responsive table.</b> Collapses on mobile-->
-<!--      </NotificationBar>-->
 
 <!--      <CardBox has-table>-->
 <!--        <TableSampleClients />-->
 <!--      </CardBox>-->
+
     </SectionMain>
   </LayoutAuthenticated>
 </template>
