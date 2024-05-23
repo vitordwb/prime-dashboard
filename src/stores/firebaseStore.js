@@ -49,8 +49,8 @@ export const useFirebaseStore = defineStore('firebase', {
       }
     },
     getProcessedData() {
-      if (this.relayData) {
-        return processRelayData(this.relayData);
+      if (this.relayData || JSON.parse(localStorage.getItem('relayData')) || null) {
+        return processRelayData(this.relayData || JSON.parse(localStorage.getItem('relayData')) || null);
       }
       return null;
     }
