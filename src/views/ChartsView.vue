@@ -1,6 +1,6 @@
 <script>
-import { useFirebaseStore } from '@/stores/firebaseStore'
-import { computed, onMounted } from 'vue'
+import { useFirebaseStore }       from '@/stores/firebaseStore'
+import { computed, onMounted }    from 'vue'
 
 import LayoutAuthenticated        from '@/layouts/LayoutAuthenticated.vue'
 import SectionMain                from '@/components/SectionMain.vue'
@@ -120,6 +120,12 @@ export default {
 
       <CardBox class="mb-6">
         <div>
+          <temperaturas-chart/>
+        </div>
+      </CardBox>
+
+      <CardBox class="mb-6">
+        <div>
           <temperatura-interna-chart/>
         </div>
       </CardBox>
@@ -139,18 +145,6 @@ export default {
           <ciclos-chart/>
         </div>
       </CardBox>
-
-      <!--      <CardBox class="mb-6">-->
-      <!--        <div v-if="datadata">-->
-      <!--          <line-chart :data="datadata" class="h-96" />-->
-      <!--        </div>-->
-      <!--      </CardBox>-->
-
-      <!--      <CardBox class="mb-6">-->
-      <!--      <div>-->
-      <!--        <temperaturas-chart/>-->
-      <!--      </div>-->
-      <!--      </CardBox>-->
 
 
 <!--      <CardBox class="mb-6">-->
