@@ -1,7 +1,7 @@
 <script>
-import { Bar } from 'vue-chartjs'
+import { Bar }                 from 'vue-chartjs'
 import { computed, onMounted } from 'vue'
-import { useFirebaseStore } from '@/stores/firebaseStore'
+import { useFirebaseStore }    from '@/stores/firebaseStore'
 
 import { Chart as ChartJS
   , Title
