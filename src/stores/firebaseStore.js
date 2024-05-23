@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia';
 import { initializeApp } from "firebase/app";
-import { getDatabase, ref, child, get } from "firebase/database";
+import { getDatabase, ref, query, orderByKey, limitToLast, get } from "firebase/database";
+import { processRelayData } from './dataProcessor';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAYbtDoGXb8l9f7dKxerUXqG-ceHP8XK20",
@@ -26,17 +27,17 @@ export const useFirebaseStore = defineStore('firebase', {
     error: null,
   }),
   actions: {
-    async fetchRelayData() {
+    async fetchRelayData(limit = 50) {
       this.loading = true;
       try {
-        const dbRef = ref(database);
-        const snapshot = await get(child(dbRef, 'rele003'));
+        const dbRef = ref(database, 'rele003');
+        const queryRef = query(dbRef, orderByKey(), limitToLast(limit));
+        const snapshot = await get(queryRef);
         if (snapshot.exists()) {
-          // eslint-disable-next-line no-unused-vars
-          this.relayData = Object.entries(snapshot.val()).map(([key, value]) => ({...value}));
+          this.relayData = Object.entries(snapshot.val()).map(([, value]) => ({ ...value }));
           localStorage.setItem('relayData', JSON.stringify(this.relayData));
         } else {
-          alert('Nenhum dado disponível')
+          alert('Nenhum dado disponível');
           console.log("Firebase: no data available");
           this.relayData = null;
         }
@@ -47,5 +48,11 @@ export const useFirebaseStore = defineStore('firebase', {
         this.loading = false;
       }
     },
+    getProcessedData() {
+      if (this.relayData) {
+        return processRelayData(this.relayData);
+      }
+      return null;
+    }
   },
 });
