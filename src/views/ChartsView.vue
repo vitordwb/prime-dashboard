@@ -1,14 +1,10 @@
 <script>
-import { Bar, Line } from 'vue-chartjs'
 import { useFirebaseStore } from '@/stores/firebaseStore'
-import { computed, onMounted, ref } from 'vue'
+import { computed, onMounted } from 'vue'
 
 import LayoutAuthenticated        from '@/layouts/LayoutAuthenticated.vue'
-import SectionTitle               from '@/components/SectionTitle.vue'
 import SectionMain                from '@/components/SectionMain.vue'
 import CardBox                    from '@/components/CardBox.vue'
-import LineChart                  from '@/components/Charts/LineChart.vue'
-import BarChart                   from '@/components/Charts/BarChart.vue'
 import TemperaturaInternaChart    from '@/components/Charts/TemperaturaInternaChart.vue'
 import TemperaturaExternaChart    from '@/components/Charts/TemperaturaExternaChart.vue'
 import TemperaturasChart          from '@/components/Charts/TemperaturasChart.vue'
@@ -17,14 +13,10 @@ import SectionTitleLineWithButton from '@/components/SectionTitleLineWithButton.
 import BaseButton                 from '@/components/BaseButton.vue'
 
 import {
-  mdiAccountMultiple,
-  mdiCartOutline,
   mdiChartTimelineVariant,
   mdiReload,
-  mdiGithub,
   mdiChartPie,
-  mdiCoolantTemperature,
-  mdiDatabase, mdiMonitorDashboard
+  mdiMonitorDashboard
 } from '@mdi/js'
 
 import { Chart as ChartJS
@@ -56,13 +48,9 @@ export default {
     , TemperaturasChart
     , TemperaturaInternaChart
     , TemperaturaExternaChart
-    , Bar
-    , BarChart
-    , LineChart
     , CardBox
     , LayoutAuthenticated
     , SectionMain
-    , SectionTitle
     , SectionTitleLineWithButton
   },
   setup() {
