@@ -1,5 +1,8 @@
 <script>
-import BarChart from '@/components/Charts/BarChart.vue'
+import { computed, onMounted } from 'vue'
+import { useFirebaseStore }    from '@/stores/firebaseStore'
+import BarChart                from '@/components/Charts/BarChart.vue'
+
 import { Chart as ChartJS
   , Title
   , Tooltip
@@ -9,8 +12,6 @@ import { Chart as ChartJS
   , LinearScale
   , LineElement
 } from 'chart.js'
-import { useFirebaseStore } from '@/stores/firebaseStore'
-import { computed, onMounted } from 'vue'
 
 ChartJS.register(
     Title
