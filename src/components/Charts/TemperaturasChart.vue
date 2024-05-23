@@ -1,10 +1,27 @@
 <script>
-import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale, LineElement } from 'chart.js'
-import { useFirebaseStore } from '@/stores/firebaseStore'
-import { computed, onMounted, ref } from 'vue'
-import LineChart from '@/components/Charts/LineChart.vue'
+import { computed, onMounted } from 'vue'
+import { useFirebaseStore }    from '@/stores/firebaseStore'
+import LineChart               from '@/components/Charts/LineChart.vue'
 
-ChartJS.register(Title, Tooltip, Legend, BarElement, LineElement, CategoryScale, LinearScale)
+import { Chart as ChartJS
+  , Title
+  , Tooltip
+  , Legend
+  , BarElement
+  , CategoryScale
+  , LinearScale
+  , LineElement
+} from 'chart.js'
+
+ChartJS.register(
+    Title
+  , Tooltip
+  , Legend
+  , BarElement
+  , LineElement
+  , CategoryScale
+  , LinearScale
+)
 
 export default {
   name: 'TemperaturasChart',
@@ -12,9 +29,6 @@ export default {
   setup() {
     const firebaseStore = useFirebaseStore();
     const processedData = computed(() => firebaseStore.getProcessedData());
-
-    console.log('processedData');
-    console.log(processedData.value);
 
     onMounted(() => {
       firebaseStore.getProcessedData();
@@ -31,6 +45,7 @@ export default {
         "labels": this.processedData.getDatetime(),
         "datasets": [
           {
+            "label": "Temperatura Interna",
             "fill": false,
             "borderColor": "#00D1B2",
             "borderWidth": 2,
@@ -43,11 +58,12 @@ export default {
             "pointHoverRadius": 4,
             "pointHoverBorderWidth": 15,
             "pointRadius": 4,
-            "data": [ this.processedData.getTemperaturaInterna() ],
+            "data": this.processedData.getTemperaturaInterna(),
             "tension": 0.5,
             "cubicInterpolationMode": "default"
           },
           {
+            "label": "Temperatura Externa",
             "fill": false,
             "borderColor": "#209CEE",
             "borderWidth": 2,
@@ -65,6 +81,7 @@ export default {
             "cubicInterpolationMode": "default"
           },
           {
+            "label": "Temperatura Cobre",
             "fill": false,
             "borderColor": "#FF3860",
             "borderWidth": 2,
@@ -77,7 +94,7 @@ export default {
             "pointHoverRadius": 4,
             "pointHoverBorderWidth": 15,
             "pointRadius": 4,
-            "data": this.processedData.getTemperaturaExterna(),
+            "data": this.processedData.getTemperaturaCobre(),
             "tension": 0.5,
             "cubicInterpolationMode": "default"
           }
