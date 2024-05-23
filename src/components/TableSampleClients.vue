@@ -67,13 +67,13 @@ const checked = (isChecked, client) => {
 </script>
 
 <template>
-  <CardBoxModal v-model="isModalActive" title="Sample modal">
+  <CardBoxModal v-model="isModalActive" title="Mensagem de Erro">
     <p>Lorem ipsum dolor sit amet <b>adipiscing elit</b></p>
     <p>This is sample modal</p>
   </CardBoxModal>
 
-  <CardBoxModal v-model="isModalDangerActive" title="Please confirm" button="danger" has-cancel>
-    <p>Lorem ipsum dolor sit amet <b>adipiscing elit</b></p>
+  <CardBoxModal v-model="isModalDangerActive" title="Confirmar" button="danger" has-cancel>
+    <p>Você esta deletando <b>esse alerta</b></p>
     <p>This is sample modal</p>
   </CardBoxModal>
 
