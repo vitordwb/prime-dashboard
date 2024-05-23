@@ -42,7 +42,7 @@ export default {
       const stream = this.$refs.videoElement.srcObject;
       const tracks = stream.getTracks();
 
-      tracks.forEach(function (track) {
+      tracks.forEach(track => {
         track.stop();
       });
 
