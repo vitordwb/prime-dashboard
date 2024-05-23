@@ -55,9 +55,9 @@ export default {
 <style scoped lang="scss">
 .chartjs {
   display: flex;
-  justify-content: center; /* Centraliza horizontalmente */
-  align-items: center;     /* Centraliza verticalmente */
-  height: 100vh;           /* Faz o container ter a altura total da viewport */
+  justify-content: center; /* centraliza horizontalmente */
+  align-items: center;     /* centraliza verticalmente */
+  height: 100vh;           /* faz o container ter a altura total da viewport */
 }
 
 .video-container {
@@ -80,15 +80,15 @@ video {
 /* Media queries para dispositivos móveis */
 @media (max-width: 768px) {
   .video-container {
-    width: 90vw;           /* Ocupa 90% da largura da viewport em dispositivos móveis */
-    max-width: none;       /* Remove a limitação de largura máxima */
+    width: 90vw;           /* ocupa 90% da largura da viewport em dispositivos móveis */
+    max-width: none;       /* remove a limitação de largura máxima */
   }
 }
 
 @media (max-width: 480px) {
   .video-container {
-    width: 100vw;          /* Ocupa 100% da largura da viewport em dispositivos muito pequenos */
-    aspect-ratio: auto;    /* Ajusta a proporção para evitar distorções */
+    width: 100vw;          /* ocupa 100% da largura da viewport em dispositivos muito pequenos */
+    aspect-ratio: auto;    /* ajusta a proporção para evitar distorções */
   }
 }
 </style>
