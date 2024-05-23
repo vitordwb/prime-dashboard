@@ -7,7 +7,8 @@ import {
   CategoryScale,
   Tooltip,
   BarElement,
-  BarController
+  BarController,
+  Filler
 } from 'chart.js'
 
 const props = defineProps({
@@ -21,7 +22,7 @@ const root = ref(null)
 
 let chart
 
-Chart.register(BarElement, PointElement, BarController, LinearScale, CategoryScale, Tooltip)
+Chart.register(BarElement, PointElement, BarController, LinearScale, CategoryScale, Tooltip, Filler)
 
 onMounted(() => {
   chart = new Chart(root.value, {
