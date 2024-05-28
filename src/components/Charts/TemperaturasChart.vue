@@ -1,7 +1,15 @@
 <script>
-import { computed, onMounted } from 'vue'
-import { useFirebaseStore }    from '@/stores/firebaseStore'
-import LineChart               from '@/components/Charts/LineChart.vue'
+import { computed, onMounted }    from 'vue'
+import { useFirebaseStore }       from '@/stores/firebaseStore'
+import LineChart                  from '@/components/Charts/LineChart.vue'
+import BaseButton                 from '@/components/BaseButton.vue'
+import SectionTitleLineWithButton from '@/components/SectionTitleLineWithButton.vue'
+import CardBox                    from '@/components/CardBox.vue'
+
+import {
+  mdiReload,
+  mdiChartPie,
+} from '@mdi/js'
 
 import { Chart as ChartJS
   , Title
@@ -25,7 +33,7 @@ ChartJS.register(
 
 export default {
   name: 'TemperaturasChart',
-  components: { LineChart },
+  components: { CardBox, SectionTitleLineWithButton, BaseButton, LineChart },
   setup() {
     const firebaseStore = useFirebaseStore();
     const processedData = computed(() => firebaseStore.getProcessedData());
@@ -41,6 +49,8 @@ export default {
 
   data() {
     return {
+      mdiReload,
+      mdiChartPie,
       chartData: {
         "labels": this.processedData.getDatetime(),
         "datasets": [
@@ -106,5 +116,13 @@ export default {
 </script>
 
 <template>
-  <line-chart :data="chartData" class="h-96" />
+  <SectionTitleLineWithButton :icon="mdiChartPie" title="Temperaturas">
+    <BaseButton :icon="mdiReload" color="whiteDark" />
+  </SectionTitleLineWithButton>
+
+  <CardBox class="mb-6">
+    <div>
+      <line-chart :data="chartData" class="h-96" />
+    </div>
+  </CardBox>
 </template>
