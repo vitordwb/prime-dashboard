@@ -1,19 +1,25 @@
 <script setup>
-import { reactive, ref } from 'vue'
-import { mdiBallotOutline, mdiAccount, mdiMail, mdiGithub } from '@mdi/js'
-import SectionMain from '@/components/SectionMain.vue'
-import CardBox from '@/components/CardBox.vue'
-import FormCheckRadioGroup from '@/components/FormCheckRadioGroup.vue'
-import FormFilePicker from '@/components/FormFilePicker.vue'
-import FormField from '@/components/FormField.vue'
-import FormControl from '@/components/FormControl.vue'
-import BaseDivider from '@/components/BaseDivider.vue'
-import BaseButton from '@/components/BaseButton.vue'
-import BaseButtons from '@/components/BaseButtons.vue'
-import SectionTitle from '@/components/SectionTitle.vue'
-import LayoutAuthenticated from '@/layouts/LayoutAuthenticated.vue'
+import { reactive, ref }          from 'vue'
+import SectionMain                from '@/components/SectionMain.vue'
+import CardBox                    from '@/components/CardBox.vue'
+import FormCheckRadioGroup        from '@/components/FormCheckRadioGroup.vue'
+import FormFilePicker             from '@/components/FormFilePicker.vue'
+import FormField                  from '@/components/FormField.vue'
+import FormControl                from '@/components/FormControl.vue'
+import BaseDivider                from '@/components/BaseDivider.vue'
+import BaseButton                 from '@/components/BaseButton.vue'
+import BaseButtons                from '@/components/BaseButtons.vue'
+import SectionTitle               from '@/components/SectionTitle.vue'
+import LayoutAuthenticated        from '@/layouts/LayoutAuthenticated.vue'
 import SectionTitleLineWithButton from '@/components/SectionTitleLineWithButton.vue'
-import NotificationBarInCard from '@/components/NotificationBarInCard.vue'
+import NotificationBarInCard      from '@/components/NotificationBarInCard.vue'
+
+import {
+    mdiBallotOutline
+  , mdiAccount
+  , mdiMail
+  , mdiGithub
+} from '@mdi/js'
 
 const selectOptions = [
   { id: 1, label: 'Business development' },
@@ -59,7 +65,7 @@ const formStatusSubmit = () => {
     <SectionMain>
       <SectionTitleLineWithButton :icon="mdiBallotOutline" title="Forms example" main>
         <BaseButton
-          href="https://github.com/justboil/admin-one-vue-tailwind"
+          href="https://github.com/vitordwb/prime-dashboard"
           target="_blank"
           :icon="mdiGithub"
           label="Repositório no GitHub"
