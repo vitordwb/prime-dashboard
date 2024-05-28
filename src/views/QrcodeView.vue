@@ -52,6 +52,19 @@ export default {
 };
 </script>
 
+<script setup lang="ts">
+import LayoutAuthenticated from '@/layouts/LayoutAuthenticated.vue';
+import SectionMain from '@/components/SectionMain.vue'
+// import SectionTitle from '@/components/SectionTitle.vue'
+// import { mdiChartTimelineVariant, mdiGithub, mdiQrcode } from '@mdi/js'
+// import SectionTitleLineWithButton from '@/components/SectionTitleLineWithButton.vue'
+// import BaseButton from '@/components/BaseButton.vue'
+import BaseDivider from '@/components/BaseDivider.vue'
+import { mdiCamera, mdiChartTimelineVariant, mdiGithub } from '@mdi/js'
+import SectionTitleLineWithButton from '@/components/SectionTitleLineWithButton.vue'
+import BaseButton from '@/components/BaseButton.vue'
+</script>
+
 <style scoped lang="scss">
 .chartjs {
   display: flex;
@@ -92,16 +105,3 @@ video {
   }
 }
 </style>
-
-<script setup lang="ts">
-import LayoutAuthenticated from '@/layouts/LayoutAuthenticated.vue';
-import SectionMain from '@/components/SectionMain.vue'
-// import SectionTitle from '@/components/SectionTitle.vue'
-// import { mdiChartTimelineVariant, mdiGithub, mdiQrcode } from '@mdi/js'
-// import SectionTitleLineWithButton from '@/components/SectionTitleLineWithButton.vue'
-// import BaseButton from '@/components/BaseButton.vue'
-import BaseDivider from '@/components/BaseDivider.vue'
-import { mdiCamera, mdiChartTimelineVariant, mdiGithub } from '@mdi/js'
-import SectionTitleLineWithButton from '@/components/SectionTitleLineWithButton.vue'
-import BaseButton from '@/components/BaseButton.vue'
-</script>
