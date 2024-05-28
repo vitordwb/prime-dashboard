@@ -14,7 +14,7 @@ import { Chart as ChartJS
 } from 'chart.js'
 
 ChartJS.register(
-  Title
+    Title
   , Tooltip
   , Legend
   , BarElement
@@ -23,7 +23,6 @@ ChartJS.register(
   , LinearScale
 )
 
-// noinspection JSUnusedGlobalSymbols
 export default {
   name: 'TemperaturaInternaChart',
   components: { Bar },
