@@ -1,31 +1,34 @@
 <script setup>
 import { computed, ref, onMounted } from 'vue'
-import { useMainStore } from '@/stores/main'
-import {
-  mdiAccountMultiple,
-  mdiCartOutline,
-  mdiChartTimelineVariant,
-  mdiReload,
-  mdiGithub,
-  mdiChartPie,
-  mdiCoolantTemperature,
-  mdiDatabase
-} from '@mdi/js'
-import * as chartConfig from '@/components/Charts/chart.config.js'
-import LineChart from '@/components/Charts/LineChart.vue'
-import BarChart from '@/components/Charts/BarChart.vue'
-import SectionMain from '@/components/SectionMain.vue'
-import CardBoxWidget from '@/components/CardBoxWidget.vue'
-import CardBox from '@/components/CardBox.vue'
-import BaseButton from '@/components/BaseButton.vue'
-import LayoutAuthenticated from '@/layouts/LayoutAuthenticated.vue'
+import { useMainStore }             from '@/stores/main'
+
+import LayoutAuthenticated        from '@/layouts/LayoutAuthenticated.vue'
+import { useFirebaseStore }       from '@/stores/firebaseStore'
+
+import * as chartConfig           from '@/components/Charts/chart.config.js'
+import LineChart                  from '@/components/Charts/LineChart.vue'
+import BarChart                   from '@/components/Charts/BarChart.vue'
 import SectionTitleLineWithButton from '@/components/SectionTitleLineWithButton.vue'
-import SectionBannerStarOnGitHub from '@/components/SectionBannerStarOnGitHub.vue'
-import { useFirebaseStore } from '@/stores/firebaseStore'
-import CardBoxTransaction from '@/components/CardBoxTransaction.vue'
-import CardBoxClient from '@/components/CardBoxClient.vue'
-import TableSampleClients from '@/components/TableSampleClients.vue'
-import NotificationBar from '@/components/NotificationBar.vue'
+import SectionMain                from '@/components/SectionMain.vue'
+import SectionBannerStarOnGitHub  from '@/components/SectionBannerStarOnGitHub.vue'
+import CardBoxWidget              from '@/components/CardBoxWidget.vue'
+import CardBox                    from '@/components/CardBox.vue'
+import CardBoxTransaction         from '@/components/CardBoxTransaction.vue'
+import CardBoxClient              from '@/components/CardBoxClient.vue'
+import TableSampleClients         from '@/components/TableSampleClients.vue'
+import NotificationBar            from '@/components/NotificationBar.vue'
+import BaseButton                 from '@/components/BaseButton.vue'
+
+import {
+    mdiAccountMultiple
+  , mdiCartOutline
+  , mdiChartTimelineVariant
+  , mdiReload
+  , mdiGithub
+  , mdiChartPie
+  , mdiCoolantTemperature
+  , mdiDatabase
+} from '@mdi/js'
 
 const chartData = ref(null)
 const firebaseStore = useFirebaseStore();
@@ -46,9 +49,10 @@ onMounted(() => {
 
 const getLastCycle = () => relayData.value[relayData.value.length - 1].cycle
 
-const mainStore = useMainStore()
-const clientBarItems = computed(() => mainStore.clients.slice(0, 4))
-const transactionBarItems = computed(() => mainStore.history)
+// const mainStore = useMainStore()
+// const clientBarItems = computed(() => mainStore.clients.slice(0, 4))
+// const transactionBarItems = computed(() => mainStore.history)
+
 </script>
 
 <template>
