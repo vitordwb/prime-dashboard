@@ -35,14 +35,6 @@ const routes = [
   },
   {
     meta: {
-      title: 'Forms'
-    },
-    path: '/forms',
-    name: 'forms',
-    component: () => import('@/views/FormsView.vue')
-  },
-  {
-    meta: {
       title: 'Qr Code'
     },
     path: '/qrcode',
@@ -51,10 +43,10 @@ const routes = [
   },
   {
     meta: {
-      title: 'Profile'
+      title: 'Perfil'
     },
-    path: '/profile',
-    name: 'profile',
+    path: '/perfil',
+    name: 'perfil',
     component: () => import('@/views/ProfileView.vue')
   },
   {
