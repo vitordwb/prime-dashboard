@@ -53,55 +53,49 @@ export default {
 </script>
 
 <script setup lang="ts">
-import LayoutAuthenticated from '@/layouts/LayoutAuthenticated.vue';
-import SectionMain from '@/components/SectionMain.vue'
-// import SectionTitle from '@/components/SectionTitle.vue'
-// import { mdiChartTimelineVariant, mdiGithub, mdiQrcode } from '@mdi/js'
-// import SectionTitleLineWithButton from '@/components/SectionTitleLineWithButton.vue'
-// import BaseButton from '@/components/BaseButton.vue'
-import BaseDivider from '@/components/BaseDivider.vue'
-import { mdiCamera, mdiChartTimelineVariant, mdiGithub } from '@mdi/js'
+import LayoutAuthenticated        from '@/layouts/LayoutAuthenticated.vue';
+import SectionMain                from '@/components/SectionMain.vue'
+import BaseDivider                from '@/components/BaseDivider.vue'
 import SectionTitleLineWithButton from '@/components/SectionTitleLineWithButton.vue'
-import BaseButton from '@/components/BaseButton.vue'
+import { mdiCamera }              from '@mdi/js'
 </script>
 
 <style scoped lang="scss">
 .chartjs {
   display: flex;
-  justify-content: center; /* centraliza horizontalmente */
-  align-items: center;     /* centraliza verticalmente */
-  height: 100vh;           /* faz o container ter a altura total da viewport */
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .video-container {
-  display: flex;           /* flexbox to center content */
-  justify-content: center; /* centraliza horizontalmente */
-  align-items: center;     /* centraliza verticalmente */
-  width: 80vw;             /* ocupa 80% da largura da viewport */
-  max-width: 600px;        /* limita a largura máxima para grandes dispositivos */
-  aspect-ratio: 1;         /* garante que o container seja quadrado */
-  overflow: hidden;        /* evita que o vídeo ultrapasse os limites do container */
-  margin: 0 auto;          /* center the container itself */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80vw;
+  max-width: 600px;
+  aspect-ratio: 1;
+  overflow: hidden;
+  margin: 0 auto;
 }
 
 video {
   width: 100%;
   height: 100%;
-  object-fit: cover;       /* garante que o vídeo preencha o espaço sem distorção */
+  object-fit: cover;
 }
 
-/* Media queries para dispositivos móveis */
 @media (max-width: 768px) {
   .video-container {
-    width: 90vw;           /* ocupa 90% da largura da viewport em dispositivos móveis */
-    max-width: none;       /* remove a limitação de largura máxima */
+    width: 90vw;
+    max-width: none;
   }
 }
 
 @media (max-width: 480px) {
   .video-container {
-    width: 100vw;          /* ocupa 100% da largura da viewport em dispositivos muito pequenos */
-    aspect-ratio: auto;    /* ajusta a proporção para evitar distorções */
+    width: 100vw;
+    aspect-ratio: auto;
   }
 }
 </style>
