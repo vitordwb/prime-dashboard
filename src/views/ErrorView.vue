@@ -18,7 +18,7 @@ import LayoutGuest       from '@/layouts/LayoutGuest.vue'
 
         <template #footer>
           <BaseButtons>
-            <BaseButton label="Fechar" to="/dashboard" color="danger" />
+            <BaseButton label="Fechar" to="/" color="danger" />
           </BaseButtons>
         </template>
       </CardBox>
