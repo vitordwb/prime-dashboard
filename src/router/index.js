@@ -19,22 +19,6 @@ const routes = [
   },
   {
     meta: {
-      title: 'Dashboard'
-    },
-    path: '/dashboard',
-    name: 'dashboard',
-    component: Home
-  },
-  {
-    meta: {
-      title: 'Tab'
-    },
-    path: '/tables',
-    name: 'tables',
-    component: () => import('@/views/TablesView.vue')
-  },
-  {
-    meta: {
       title: 'Qr Code'
     },
     path: '/qrcode',
