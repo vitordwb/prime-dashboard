@@ -1,33 +1,28 @@
 <script setup>
 import { computed, ref, onMounted } from 'vue'
-import { useMainStore }             from '@/stores/main'
+import { useFirebaseStore }         from '@/stores/firebaseStore'
+import LayoutAuthenticated          from '@/layouts/LayoutAuthenticated.vue'
 
-import LayoutAuthenticated        from '@/layouts/LayoutAuthenticated.vue'
-import { useFirebaseStore }       from '@/stores/firebaseStore'
-
-import * as chartConfig           from '@/components/Charts/chart.config.js'
-import LineChart                  from '@/components/Charts/LineChart.vue'
-import BarChart                   from '@/components/Charts/BarChart.vue'
-import SectionTitleLineWithButton from '@/components/SectionTitleLineWithButton.vue'
-import SectionMain                from '@/components/SectionMain.vue'
-import SectionBannerStarOnGitHub  from '@/components/SectionBannerStarOnGitHub.vue'
-import CardBoxWidget              from '@/components/CardBoxWidget.vue'
-import CardBox                    from '@/components/CardBox.vue'
-import CardBoxTransaction         from '@/components/CardBoxTransaction.vue'
-import CardBoxClient              from '@/components/CardBoxClient.vue'
-import TableSampleClients         from '@/components/TableSampleClients.vue'
-import NotificationBar            from '@/components/NotificationBar.vue'
-import BaseButton                 from '@/components/BaseButton.vue'
+import * as chartConfig             from '@/components/Charts/chart.config.js'
+import LineChart                    from '@/components/Charts/LineChart.vue'
+import BarChart                     from '@/components/Charts/BarChart.vue'
+import SectionTitleLineWithButton   from '@/components/SectionTitleLineWithButton.vue'
+import SectionMain                  from '@/components/SectionMain.vue'
+import CardBoxWidget                from '@/components/CardBoxWidget.vue'
+import CardBox                      from '@/components/CardBox.vue'
+import NotificationBar              from '@/components/NotificationBar.vue'
+import BaseButton                   from '@/components/BaseButton.vue'
 
 import {
-    mdiAccountMultiple
-  , mdiCartOutline
-  , mdiChartTimelineVariant
+    mdiChartTimelineVariant
   , mdiReload
   , mdiGithub
   , mdiChartPie
   , mdiCoolantTemperature
-  , mdiDatabase
+  , mdiInformation
+  , mdiCheckCircle
+  , mdiAlert
+  , mdiAlertCircle
 } from '@mdi/js'
 
 const chartData = ref(null)
@@ -49,18 +44,63 @@ onMounted(() => {
 
 const getLastCycle = () => relayData.value[relayData.value.length - 1].cycle
 
-// const mainStore = useMainStore()
-// const clientBarItems = computed(() => mainStore.clients.slice(0, 4))
-// const transactionBarItems = computed(() => mainStore.history)
-
 </script>
 
 <template>
   <LayoutAuthenticated>
     <SectionMain>
 
-<!--      consomo medio kWh -->
-<!--      temperatura interna-->
+      <NotificationBar color="info" :icon="mdiInformation" :outline="notificationsOutline">
+        <b>Info state</b>. NotificationBar
+        <template #right>
+          <BaseButton
+            label="Button"
+            :color="notificationsOutline ? 'info' : 'white'"
+            :outline="notificationsOutline"
+            rounded-full
+            small
+          />
+        </template>
+      </NotificationBar>
+
+      <NotificationBar color="success" :icon="mdiCheckCircle" :outline="notificationsOutline">
+        <b>Success state</b>. NotificationBar
+        <template #right>
+          <BaseButton
+            label="Button"
+            :color="notificationsOutline ? 'success' : 'white'"
+            :outline="notificationsOutline"
+            rounded-full
+            small
+          />
+        </template>
+      </NotificationBar>
+
+      <NotificationBar color="warning" :icon="mdiAlert" :outline="notificationsOutline">
+        <b>Warning state</b>. NotificationBar
+        <template #right>
+          <BaseButton
+            label="Button"
+            :color="notificationsOutline ? 'warning' : 'white'"
+            :outline="notificationsOutline"
+            rounded-full
+            small
+          />
+        </template>
+      </NotificationBar>
+
+      <NotificationBar color="danger" :icon="mdiAlertCircle" :outline="notificationsOutline">
+        <b>Danger state</b>. NotificationBar
+        <template #right>
+          <BaseButton
+            label="Button"
+            :color="notificationsOutline ? 'danger' : 'white'"
+            :outline="notificationsOutline"
+            rounded-full
+            small
+          />
+        </template>
+      </NotificationBar>
 
       <SectionTitleLineWithButton :icon="mdiChartTimelineVariant" title="Visão Geral" main>
         <BaseButton
@@ -122,39 +162,6 @@ const getLastCycle = () => relayData.value[relayData.value.length - 1].cycle
           <bar-chart :data="chartData" class="h-96" />
         </div>
       </CardBox>
-
-<!--      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">-->
-<!--        <div class="flex flex-col justify-between">-->
-<!--          <CardBoxTransaction-->
-<!--            v-for="(transaction, index) in transactionBarItems"-->
-<!--            :key="index"-->
-<!--            :amount="transaction.amount"-->
-<!--            :date="transaction.date"-->
-<!--            :business="transaction.business"-->
-<!--            :type="transaction.type"-->
-<!--            :name="transaction.name"-->
-<!--            :account="transaction.account"-->
-<!--          />-->
-<!--        </div>-->
-<!--        <div class="flex flex-col justify-between">-->
-<!--          <CardBoxClient-->
-<!--            v-for="client in clientBarItems"-->
-<!--            :key="client.id"-->
-<!--            :name="client.name"-->
-<!--            :login="client.login"-->
-<!--            :date="client.created"-->
-<!--            :progress="client.progress"-->
-<!--          />-->
-<!--        </div>-->
-<!--      </div>-->
-
-<!--      <SectionBannerStarOnGitHub class="mt-6 mb-6" />-->
-
-<!--      <SectionTitleLineWithButton :icon="mdiAccountMultiple" title="Clients" />-->
-
-<!--      <CardBox has-table>-->
-<!--        <TableSampleClients />-->
-<!--      </CardBox>-->
 
     </SectionMain>
   </LayoutAuthenticated>
