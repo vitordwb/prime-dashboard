@@ -7,7 +7,6 @@ import {
   , query
   , orderByKey
   , limitToLast
-  , get
   , onValue
 } from "firebase/database";
 
