@@ -1,12 +1,12 @@
 import {
-  // mdiAccountCircle,
-  // mdiLock,
-  // mdiAlertCircle,
-  // mdiSquareEditOutline,
+  mdiAccountCircle,
+  mdiLock,
+  mdiAlertCircle,
+  mdiSquareEditOutline,
   mdiTable,
-  // mdiViewList,
-  // mdiTelevisionGuide,
-  // mdiPalette,
+  mdiViewList,
+  mdiTelevisionGuide,
+  mdiPalette,
   mdiMonitor,
   mdiGithub,
   mdiChartBar,
@@ -25,22 +25,6 @@ export default [
     icon: mdiChartBar
   },
   {
-    label: 'Charts',
-    icon: mdiTable,
-    menu: [
-      {
-        to: '/charts',
-        label: 'Charts 1',
-        icon: mdiChartBar
-      },
-      {
-        to: '/charts2',
-        label: 'Charts 2',
-        icon: mdiChartBar
-      },
-    ]
-  },
-  {
     to:'/qrcode',
     label: 'QR Code',
     icon: mdiQrcode,
@@ -51,51 +35,24 @@ export default [
     icon: mdiGithub,
     target: '_blank'
   },
-  // {
-  //   to: '/',
-  //   label: 'Styles',
-  //   icon: mdiPalette
-  // },
-  // {
-  //   to: '/profile',
-  //   label: 'Profile',
-  //   icon: mdiAccountCircle
-  // },
-  // {
-  //   to: '/login',
-  //   label: 'Login',
-  //   icon: mdiLock
-  // },
-  // {
-  //   to: '/tables',
-  //   label: 'Tables',
-  //   icon: mdiTable
-  // },
-  // {
-  //   to: '/forms',
-  //   label: 'Forms',
-  //   icon: mdiSquareEditOutline
-  // },
-  // {
-  //   to: '/ui',
-  //   label: 'UI',
-  //   icon: mdiTelevisionGuide
-  // },
-  // {
-  //   to: '/error',
-  //   label: 'Error',
-  //   icon: mdiAlertCircle
-  // },
-  // {
-  //   label: 'Dropdown',
-  //   icon: mdiViewList,
-  //   menu: [
-  //     {
-  //       label: 'Item One'
-  //     },
-  //     {
-  //       label: 'Item Two'
-  //     }
-  //   ]
-  // },
+  {
+    to: '/perfil',
+    label: 'Perfil',
+    icon: mdiAccountCircle
+  },
+  {
+    to: '/login',
+    label: 'Login',
+    icon: mdiLock
+  },
+  {
+    to: '/ui',
+    label: 'UI',
+    icon: mdiTelevisionGuide
+  },
+  {
+    to: '/error',
+    label: 'Error',
+    icon: mdiAlertCircle
+  },
 ]
