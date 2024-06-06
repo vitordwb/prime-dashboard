@@ -1,7 +1,6 @@
 <script setup>
 import { reactive }      from 'vue'
 import { useRouter }     from 'vue-router'
-
 import SectionFullScreen from '@/components/SectionFullScreen.vue'
 import CardBox           from '@/components/CardBox.vue'
 import FormCheckRadio    from '@/components/FormCheckRadio.vue'
@@ -11,11 +10,14 @@ import BaseButton        from '@/components/BaseButton.vue'
 import BaseButtons       from '@/components/BaseButtons.vue'
 import LayoutGuest       from '@/layouts/LayoutGuest.vue'
 
-import { mdiAccount, mdiAsterisk } from '@mdi/js'
+import {
+    mdiAccount
+  , mdiAsterisk
+} from '@mdi/js'
 
 const form = reactive({
   login: 'vitor.watanabe',
-  pass: 'highly-secure-password-fYjUw-',
+  pass: 'senha-super-segura',
   remember: true
 })
 
@@ -30,36 +32,36 @@ const submit = () => {
   <LayoutGuest>
     <SectionFullScreen v-slot="{ cardClass }" bg="purplePink">
       <CardBox :class="cardClass" is-form @submit.prevent="submit">
-        <FormField label="Login" help="Please enter your login">
+        <FormField label="Login" help="Insira seu login">
           <FormControl
             v-model="form.login"
             :icon="mdiAccount"
             name="login"
-            autocomplete="username"
+            autocomplete="usuario"
           />
         </FormField>
 
-        <FormField label="Password" help="Please enter your password">
+        <FormField label="Password" help="Insira sua senha">
           <FormControl
             v-model="form.pass"
             :icon="mdiAsterisk"
-            type="password"
-            name="password"
-            autocomplete="current-password"
+            type="senha"
+            name="senha"
+            autocomplete="senha-atual"
           />
         </FormField>
 
         <FormCheckRadio
           v-model="form.remember"
-          name="remember"
-          label="Remember"
+          name="lembrar"
+          label="lembrar"
           :input-value="true"
         />
 
         <template #footer>
           <BaseButtons>
             <BaseButton type="submit" color="info" label="Login" />
-            <BaseButton to="/dashboard" color="info" outline label="Back" />
+            <BaseButton to="/dashboard" color="info" outline label="Voltar" />
           </BaseButtons>
         </template>
       </CardBox>
