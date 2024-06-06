@@ -2,7 +2,7 @@ import { defineStore }      from 'pinia';
 import { initializeApp }    from 'firebase/app';
 import { processRelayData } from './dataProcessor';
 import {
-    getDatabase
+  getDatabase
   , ref
   , query
   , orderByKey
@@ -28,6 +28,7 @@ const database = getDatabase(app);
 export const useFirebaseStore = defineStore('firebase', {
   state: () => ({
     relayData: JSON.parse(localStorage.getItem('relayData')) || null,
+    processData: null,
     loading: false,
     error: null,
   }),
@@ -48,7 +49,6 @@ export const useFirebaseStore = defineStore('firebase', {
             this.relayData = null;
           }
         });
-
       } catch (error) {
         console.error(error);
         this.error = error;
@@ -58,7 +58,8 @@ export const useFirebaseStore = defineStore('firebase', {
     },
     getProcessedData() {
       if (this.relayData || JSON.parse(localStorage.getItem('relayData'))) {
-        return processRelayData(this.relayData || JSON.parse(localStorage.getItem('relayData')));
+        this.processData = processRelayData(this.relayData || JSON.parse(localStorage.getItem('relayData')));
+        return this.processData;
       }
       return null;
     }
