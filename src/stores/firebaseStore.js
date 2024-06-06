@@ -8,6 +8,7 @@ import {
   , orderByKey
   , limitToLast
   , get
+  , onValue
 } from "firebase/database";
 
 const firebaseConfig = {
@@ -34,16 +35,20 @@ export const useFirebaseStore = defineStore('firebase', {
     async fetchRelayData(limit = 25) {
       this.loading = true;
       try {
-        const dbRef = ref(database, 'rele004');
+        const dbRef = ref(database, 'rele003');
         const queryRef = query(dbRef, orderByKey(), limitToLast(limit));
-        const snapshot = await get(queryRef);
-        if (snapshot.exists()) {
-          this.relayData = Object.entries(snapshot.val()).map(([, value]) => ({ ...value }));
-          localStorage.setItem('relayData', JSON.stringify(this.relayData));
-        } else {
-          console.log("Firebase: no data available");
-          this.relayData = null;
-        }
+        onValue(queryRef, (snapshot) => {
+          if (snapshot.exists()) {
+            console.log('chamando firebase', snapshot.val());
+            this.relayData = Object.entries(snapshot.val()).map(([, value]) => ({ ...value }));
+            localStorage.setItem('relayData', JSON.stringify(this.relayData));
+            this.getProcessedData();
+          } else {
+            console.log("Firebase: no data available");
+            this.relayData = null;
+          }
+        });
+
       } catch (error) {
         console.error(error);
         this.error = error;
