@@ -2,9 +2,6 @@
 import { computed, onMounted }    from 'vue'
 import { useFirebaseStore }       from '@/stores/firebaseStore'
 import LineChart                  from '@/components/Charts/LineChart.vue'
-import BaseButton                 from '@/components/BaseButton.vue'
-import SectionTitleLineWithButton from '@/components/SectionTitleLineWithButton.vue'
-import CardBox                    from '@/components/CardBox.vue'
 
 import {
   mdiReload,
@@ -33,7 +30,7 @@ ChartJS.register(
 
 export default {
   name: 'CorrenteBaixoChart',
-  components: { CardBox, LineChart },
+  components: { LineChart },
   setup() {
     const firebaseStore = useFirebaseStore();
     const processedData = computed(() => firebaseStore.getProcessedData());
