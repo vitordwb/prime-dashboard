@@ -14,7 +14,7 @@ export default [
       {
         icon: mdiAccount,
         label: 'Meu Perfil',
-        to: '/profile'
+        to: '/perfil'
       },
       {
         icon: mdiCogOutline,
@@ -47,10 +47,4 @@ export default [
     href: 'https://github.com/vitordwb/prime-dashboard',
     target: '_blank'
   },
-  {
-    icon: mdiLogout,
-    label: 'Sair',
-    isDesktopNoLabel: true,
-    isLogout: true
-  }
 ]

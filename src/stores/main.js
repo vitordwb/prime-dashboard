@@ -15,8 +15,8 @@ export const useMainStore = defineStore('main', () => {
 
   const isFieldFocusRegistered = ref(false)
 
-  const clients = ref([])
-  const history = ref([])
+  // const clients = ref([])
+  // const history = ref([])
 
   function setUser(payload) {
     if (payload.name) {
@@ -32,7 +32,7 @@ export const useMainStore = defineStore('main', () => {
     userEmail,
     userAvatar,
     isFieldFocusRegistered,
-    clients,
+    // clients,
     history,
     setUser
   }

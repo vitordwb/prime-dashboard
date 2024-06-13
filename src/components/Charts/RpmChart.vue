@@ -34,7 +34,7 @@ ChartJS.register(
 )
 
 export default {
-  name: 'TemperaturasChart',
+  name: 'RpmChart',
   components: { CardBox, SectionTitleLineWithButton, BaseButton, LineChart },
   setup() {
     const firebaseStore = useFirebaseStore();
@@ -44,9 +44,8 @@ export default {
     const fillChartData = () => {
       chartData.value = getChartData(
         processedData.value.getDatetime(),
-        { data: processedData.value.getTemperaturaCobre(), label: 'Temperatura Cobre' },
-        { data: processedData.value.getTemperaturaExterna(), label: 'Temperatura Externa' },
-        { data: processedData.value.getTemperaturaInterna(), label: 'Temperatura Interna' }
+        { data: processedData.value.getRpmCima(), label: 'Ventilador Cima' },
+        { data: processedData.value.getRpmBaixo(), label: 'Ventilador Baixo' }
       );
     };
 
@@ -65,7 +64,7 @@ export default {
 </script>
 
 <template>
-  <SectionTitleLineWithButton :icon="mdiChartPie" title="Temperaturas (ºC)">
+  <SectionTitleLineWithButton :icon="mdiChartPie" title="Ventiladores (RPM)">
     <BaseButton :icon="mdiReload" color="whiteDark" @click="fillChartData" />
   </SectionTitleLineWithButton>
 

@@ -6,15 +6,28 @@ export const chartColors = {
   }
 }
 
-const randomChartData = (n) => {
-  const data = []
+const randomChartData = () => {
+    const data = []
 
-  for (let i = 0; i < n; i++) {
-    data.push(Math.round(Math.random() * 200))
+    // Primeiros 10 elementos variando entre 4800 e 5100
+    for (let i = 0; i < 25; i++) {
+      data.push(Math.round(Math.random() * 4) + 22)
+    }
+
+    // // Próximos 8 elementos iguais a 0
+    // for (let i = 0; i < 8; i++) {
+    //   data.push(0)
+    // }
+    //
+    // // Últimos 5 elementos variando entre 4800 e 5100
+    // for (let i = 0; i < 5; i++) {
+    //   data.push(Math.round(Math.random() * 300) + 4800)
+    // }
+
+    return data
   }
 
-  return data
-}
+
 
 const datasetObject = (color, points) => {
   return {
@@ -36,12 +49,34 @@ const datasetObject = (color, points) => {
   }
 }
 
-export const sampleChartData = (points = 9) => {
-  const labels = []
+function generateTimestamps(startTimeStr, numIterations, intervalMinutes) {
+  // Converte a string de tempo inicial para um objeto Date
+  let startTime = new Date(startTimeStr);
 
-  for (let i = 1; i <= points; i++) {
-    labels.push(`0${i}`)
+  // Cria uma array para armazenar os timestamps
+  let timestamps = [];
+
+  // Itera e cria os timestamps
+  for (let i = 0; i < numIterations; i++) {
+    let newTime = new Date(startTime.getTime() + i * intervalMinutes * 60000);
+    timestamps.push(newTime.toISOString().replace('T', ' ').substring(0, 19));
   }
+
+  return timestamps;
+}
+
+
+export const sampleChartData = (points = 25) => {
+  // const labels = []
+
+  // for (let i = 1; i <= points; i++) {
+  //   labels.push(`0${i}`)
+
+  let startTimeStr = '2024-02-30T09:24:44';
+  let numIterations = 23;
+  let intervalMinutes = 5;
+
+  const labels = generateTimestamps(startTimeStr, numIterations, intervalMinutes)
 
   return {
     labels,

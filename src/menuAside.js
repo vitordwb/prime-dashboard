@@ -1,8 +1,4 @@
 import {
-  mdiAccountCircle,
-  mdiLock,
-  mdiAlertCircle,
-  mdiTelevisionGuide,
   mdiMonitor,
   mdiGithub,
   mdiChartBar,
@@ -30,25 +26,5 @@ export default [
     label: 'GitHub',
     icon: mdiGithub,
     target: '_blank'
-  },
-  {
-    to: '/perfil',
-    label: 'Perfil',
-    icon: mdiAccountCircle
-  },
-  {
-    to: '/login',
-    label: 'Login',
-    icon: mdiLock
-  },
-  {
-    to: '/ui',
-    label: 'UI',
-    icon: mdiTelevisionGuide
-  },
-  {
-    to: '/error',
-    label: 'Error',
-    icon: mdiAlertCircle
   },
 ]

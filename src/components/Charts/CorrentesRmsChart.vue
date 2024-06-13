@@ -44,9 +44,8 @@ export default {
     const fillChartData = () => {
       chartData.value = getChartData(
         processedData.value.getDatetime(),
-        { data: processedData.value.getTemperaturaCobre(), label: 'Temperatura Cobre' },
-        { data: processedData.value.getTemperaturaExterna(), label: 'Temperatura Externa' },
-        { data: processedData.value.getTemperaturaInterna(), label: 'Temperatura Interna' }
+        { data: processedData.value.getPotenciaRmsBaixo(), label: 'Corrente RMS Cima' },
+        { data: processedData.value.getPotenciaRmsCima(), label: 'Corrente RMS Baixo' },
       );
     };
 
@@ -65,7 +64,7 @@ export default {
 </script>
 
 <template>
-  <SectionTitleLineWithButton :icon="mdiChartPie" title="Temperaturas (ºC)">
+  <SectionTitleLineWithButton :icon="mdiChartPie" title="Correntes RMS (A)">
     <BaseButton :icon="mdiReload" color="whiteDark" @click="fillChartData" />
   </SectionTitleLineWithButton>
 

@@ -35,27 +35,11 @@ const routes = [
   },
   {
     meta: {
-      title: 'Ui'
-    },
-    path: '/ui',
-    name: 'ui',
-    component: () => import('@/views/UiView.vue')
-  },
-  {
-    meta: {
       title: 'Charts'
     },
     path: '/charts',
     name: 'charts',
     component: () => import('@/views/ChartsView.vue')
-  },
-  {
-    meta: {
-      title: 'Charts2'
-    },
-    path: '/charts2',
-    name: 'charts2',
-    component: () => import('@/views/Charts2View.vue')
   },
   {
     meta: {

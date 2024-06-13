@@ -35,7 +35,7 @@ export const useFirebaseStore = defineStore('firebase', {
     async fetchRelayData(limit = 25) {
       this.loading = true;
       try {
-        const dbRef = ref(database, 'rele003');
+        const dbRef = ref(database, 'rele006');
         const queryRef = query(dbRef, orderByKey(), limitToLast(limit));
         onValue(queryRef, (snapshot) => {
           if (snapshot.exists()) {
