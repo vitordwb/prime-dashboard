@@ -26,12 +26,3 @@ createInertiaApp({
     color: '#4B5563'
   }
 })
-
-// const darkModeStore = useDarkModeStore(pinia)
-
-// if (
-//   (!localStorage['darkMode'] && window.matchMedia('(prefers-color-scheme: dark)').matches) ||
-//   localStorage['darkMode'] === '1'
-// ) {
-//   darkModeStore.set(true)
-// }

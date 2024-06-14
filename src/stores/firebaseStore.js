@@ -11,14 +11,13 @@ import {
 } from "firebase/database";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAYbtDoGXb8l9f7dKxerUXqG-ceHP8XK20",
-  authDomain: "smart-relay-a053d.firebaseapp.com",
-  databaseURL: "https://smart-relay-a053d-default-rtdb.firebaseio.com",
-  projectId: "smart-relay-a053d",
-  storageBucket: "smart-relay-a053d.appspot.com",
-  messagingSenderId: "113487106802",
-  appId: "1:113487106802:web:56536bd445e92a61e6766b",
-  measurementId: "G-E590QVSD00"
+  apiKey: "AIzaSyCptDiH85U6qnuzpeDPQRPhziqLOVEWOZc",
+  authDomain: "esp32-9311c.firebaseapp.com",
+  databaseURL: "https://esp32-9311c-default-rtdb.firebaseio.com",
+  projectId: "esp32-9311c",
+  storageBucket: "esp32-9311c.appspot.com",
+  messagingSenderId: "420084515626",
+  appId: "1:420084515626:web:dbec77bc2a4af3e1fb1453"
 };
 
 const app = initializeApp(firebaseConfig);
@@ -32,10 +31,10 @@ export const useFirebaseStore = defineStore('firebase', {
     error: null,
   }),
   actions: {
-    async fetchRelayData(limit = 25) {
+    async fetchRelayData(limit = 15) {
       this.loading = true;
       try {
-        const dbRef = ref(database, 'rele006');
+        const dbRef = ref(database, 'equip001');
         const queryRef = query(dbRef, orderByKey(), limitToLast(limit));
         onValue(queryRef, (snapshot) => {
           if (snapshot.exists()) {
